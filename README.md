@@ -29,7 +29,7 @@ $ tree -L 2
 │   └── php.ini
 ├── data
 │   ├── mongo
-│   ├── profile
+│   └── profile
 ├── docker-compose.yml
 ├── logs
 │   ├── nginx
@@ -37,3 +37,9 @@ $ tree -L 2
 └── run
     └── nginx.pid
 ```
+
+## 截图
+![image](https://github.com/xieyx/docker-php/raw/master/images/1.png)
+![image](https://github.com/xieyx/docker-php/raw/master/images/2.png)
+![image](https://github.com/xieyx/docker-php/raw/master/images/3.png)
+![image](https://github.com/xieyx/docker-php/raw/master/images/4.png)
