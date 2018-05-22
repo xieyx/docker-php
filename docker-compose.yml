@@ -22,6 +22,7 @@ services:
       - ./data:/data/www
       - ./logs:/data/logs
       - ./conf/php.ini:/usr/local/etc/php/conf.d/php.ini
+      - ./conf/php-fpm.conf:/usr/local/etc/php-fpm.d/www.conf
       - ./run:/tmp
     working_dir: /data/www
     links:
