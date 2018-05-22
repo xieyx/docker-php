@@ -1,0 +1,43 @@
+version: '2.1'
+services:
+  openresty:
+    image: openresty/openresty
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ./logs/nginx:/data/logs/nginx
+      - ./run/nginx.pid:/var/run/nginx.pid
+      - ./conf/nginx.conf:/usr/local/openresty/nginx/conf/nginx.conf
+      - ./conf/conf.d:/etc/nginx/conf.d
+      - ./data:/data/www:ro
+    links:
+      - php
+
+  php:
+    build: ./build/php
+    ports:
+      - 9001:9000
+    volumes:
+      - ./data:/data/www
+      - ./logs:/data/logs
+      - ./conf/php.ini:/usr/local/etc/php/conf.d/php.ini
+      - ./run:/tmp
+    working_dir: /data/www
+    links:
+      - tideways
+      - mongo
+
+  tideways:
+    build: ./build/tideways
+
+  mongo:
+    image: mongo
+    ports:
+      - 27017:27017
+    volumes:
+      - ./data/mongo:/data/db
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: mongo
+      MONGO_INITDB_ROOT_PASSWORD: Mongo2xieyx
