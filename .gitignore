@@ -1,6 +1,5 @@
 data/*
-logs/nginx/*
-logs/php/*
+logs/*
 run/*
 conf/conf.d/*-dev.conf
 .DS_Store
