@@ -8,12 +8,12 @@
 * xhgui
 
 ## 初始化
-安装docker-composer, 按照官网文档安装 :link:[链接](https://docs.docker.com/compose/install/), 然后执行以下命令
+安装docker-compose, 按照官网文档安装 :link:[链接](https://docs.docker.com/compose/install/), 然后执行以下命令
 ```sh
 $ git clone https://github.com/xieyx/docker-php.git
 $ cd docker-php
-$ docker-composer build
-$ docker-composer up -d
+$ docker-compose build
+$ docker-compose up -d
 ```
 
 ## 目录结构
