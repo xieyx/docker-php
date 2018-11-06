@@ -42,6 +42,12 @@ RUN apt-get update \
     && ./configure --with-php-config=/usr/local/bin/php-config \
     && make \
     && make install \
+    && git clone git://github.com/xdebug/xdebug.git \
+    && cd xdebug \
+    && phpize \
+    && ./configure --enable-xdebug --with-php-config=/usr/local/bin/php-config \
+    && make \
+    && make install \
     && cd /tmp/ \
     && rm -rf mongo-php-driver \
     && docker-php-ext-install pdo_mysql \
